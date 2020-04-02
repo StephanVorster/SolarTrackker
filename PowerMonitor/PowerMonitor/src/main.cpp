@@ -15,7 +15,7 @@ void loop() {
   value = (5*value)/1024;
   value = value*value;
   value = value/resistor;
-  Serial.print(value);
+  Serial.println(value);
   //Serial.println("W");
   delay(1000);
 
