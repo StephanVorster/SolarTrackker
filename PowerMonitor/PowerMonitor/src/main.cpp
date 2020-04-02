@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 int pin = A5;
 float value = 0.0;
 void setup() {
