@@ -5,11 +5,7 @@
 #include "M28BYJ48.h"
 
 M28BYJ48::M28BYJ48() {
-    this->level = 9V;
-}
-
-M28BYJ48::~M28BYJ48() {
-    this->motorPins = nullptr;
+    this->level = V9;
 }
 
 void M28BYJ48::setMotorPins(int *pins) {
@@ -21,12 +17,8 @@ M28BYJ48::M28BYJ48(M28BYJ48::Voltage level, int *pins) {
     this->motorPins = pins;
 }
 
-void M28BYJ48::setMotorPins(int *pins) {
-    this->motorPins = pins;
-}
-
 void M28BYJ48::setVolatge(M28BYJ48::Voltage level) {
-    this->level = level
+    this->level = level;
 }
 
 void M28BYJ48::stepForward() {

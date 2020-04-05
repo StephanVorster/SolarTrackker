@@ -1,12 +1,17 @@
 #ifndef M28BYJ48_H
 #define M28BYJ48_H
 
+#include <Arduino.h>
 /**
  * Class used to drive the 28BYJ-48 stepper motor at different voltage levels(default 9V).
  */
 class M28BYJ48 {
 
 public:
+    /**
+     * The different volatge levels the motor can operate at
+     */
+    enum Voltage {V5,V9,V12,V15};
     /**
      * Constructor:
      * Sets the voltage level to 9V
@@ -26,10 +31,7 @@ public:
      */
     M28BYJ48(Voltage level, int* pins);
     ~M28BYJ48() = default;
-    /**
-     * The different volatge levels the motor can operate at
-     */
-    enum Voltage {5V,9V,12V,15V};
+
     /**
      * Sets the voltage that will be used on the motor.
      * @param Voltage : The desired level the motor will operate at.
