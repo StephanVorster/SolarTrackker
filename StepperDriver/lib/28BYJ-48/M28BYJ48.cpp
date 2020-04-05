@@ -9,6 +9,10 @@ M28BYJ48::M28BYJ48() {
 }
 
 void M28BYJ48::setMotorPins(int *pins) {
+    Serial.println(pins[0]);
+    Serial.println(pins[1]);
+    Serial.println(pins[2]);
+    Serial.println(pins[3]);
     this->motorPins = pins;
 }
 
@@ -21,25 +25,34 @@ void M28BYJ48::setVolatge(M28BYJ48::Voltage level) {
     this->level = level;
 }
 
+
 void M28BYJ48::stepForward() {
     digitalWrite(this->motorPins[0], HIGH);
+    delay(3);
     digitalWrite(this->motorPins[0],LOW);
     digitalWrite(this->motorPins[1], HIGH);
+    delay(3);
     digitalWrite(this->motorPins[1],LOW);
     digitalWrite(this->motorPins[2], HIGH);
+    delay(3);
     digitalWrite(this->motorPins[2],LOW);
     digitalWrite(this->motorPins[3], HIGH);
+    delay(3);
     digitalWrite(this->motorPins[3],LOW);
 }
 
 void M28BYJ48::stepBackwards() {
     digitalWrite(this->motorPins[3], HIGH);
+    delay(3);
     digitalWrite(this->motorPins[3],LOW);
     digitalWrite(this->motorPins[2], HIGH);
+    delay(3);
     digitalWrite(this->motorPins[2],LOW);
     digitalWrite(this->motorPins[1], HIGH);
+    delay(3);
     digitalWrite(this->motorPins[1],LOW);
     digitalWrite(this->motorPins[0], HIGH);
+    delay(3);
     digitalWrite(this->motorPins[0],LOW);
 }
 
