@@ -13,7 +13,7 @@ cycles through the motor pins in the order required for a forward motion eg:
         3(Orange)
         4(Blue)
 
-Each cycle turns the motor roughly 0.703 degrees
+Each cycle turns the motor roughly 0.703 degrees at 9V
 */
 void forward(int cycles) {
   for(int i=0;i<=cycles;i++){
@@ -40,7 +40,7 @@ cycles through the motor pins in the order required for a backwards motion eg:
     2(Yellow)
     1(Pink)
 
-Each cycle turns the motor roughly 0.703 degrees
+Each cycle turns the motor roughly 0.703 degrees at 9V
 */
 
 void backwards(int cycles) {
@@ -66,9 +66,9 @@ void setup() {
 }
 
 void loop() {
-  //512 cycles is roughly 360 degrees
-  //Thus there is  roughly 0.703 degrees per cycle
+  //512 cycles is roughly 360 degrees at 9V
+  //Thus there is  roughly 0.703 degrees per cycle at 9V
   forward(512);
-  //backwards(10);
+  //backwards(512);
   delay(1000);
 }
