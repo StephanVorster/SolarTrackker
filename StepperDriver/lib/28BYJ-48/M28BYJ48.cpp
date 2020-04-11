@@ -9,10 +9,6 @@ M28BYJ48::M28BYJ48() {
 }
 
 void M28BYJ48::setMotorPins(int *pins) {
-    Serial.println(pins[0]);
-    Serial.println(pins[1]);
-    Serial.println(pins[2]);
-    Serial.println(pins[3]);
     this->motorPins = pins;
 }
 
@@ -27,36 +23,73 @@ void M28BYJ48::setVolatge(M28BYJ48::Voltage level) {
 
 
 void M28BYJ48::stepForward() {
-    digitalWrite(this->motorPins[0], HIGH);
-    delay(3);
-    digitalWrite(this->motorPins[0],LOW);
-    digitalWrite(this->motorPins[1], HIGH);
-    delay(3);
-    digitalWrite(this->motorPins[1],LOW);
-    digitalWrite(this->motorPins[2], HIGH);
-    delay(3);
-    digitalWrite(this->motorPins[2],LOW);
-    digitalWrite(this->motorPins[3], HIGH);
-    delay(3);
-    digitalWrite(this->motorPins[3],LOW);
+    int* delayTime;
+    *delayTime = 2;
+
+
+    /*analogWrite(this->motorPins[0], 255);
+    delay(*delayTime);
+    analogWrite(this->motorPins[0], 0);
+    analogWrite(this->motorPins[1], 255);
+    delay(*delayTime);
+    analogWrite(this->motorPins[1], 0);
+    analogWrite(this->motorPins[2], 255);
+    delay(*delayTime);
+    analogWrite(this->motorPins[2], 0);
+    analogWrite(this->motorPins[3], 255);
+    delay(*delayTime);
+    analogWrite(this->motorPins[3], 0);*/
+
+    analogWrite(this->motorPins[0], 255);
+    analogWrite(this->motorPins[1], 255);
+    delay(*delayTime);//1100
+    analogWrite(this->motorPins[0],0);
+    delay(*delayTime);//0100
+    analogWrite(this->motorPins[2], 255);
+    analogWrite(this->motorPins[1],0);
+    delay(*delayTime);//0010
+    analogWrite(this->motorPins[3], 255);
+    analogWrite(this->motorPins[2],0);
+    delay(*delayTime);//0001
+    analogWrite(this->motorPins[0], 255);
+    delay(*delayTime);//1001
+    analogWrite(this->motorPins[3],0);
+    delay(*delayTime);//1000
+    analogWrite(this->motorPins[0], 0);
+    //0000*/
 }
 
 void M28BYJ48::stepBackwards() {
-    digitalWrite(this->motorPins[3], HIGH);
-    delay(3);
-    digitalWrite(this->motorPins[3],LOW);
-    digitalWrite(this->motorPins[2], HIGH);
-    delay(3);
-    digitalWrite(this->motorPins[2],LOW);
-    digitalWrite(this->motorPins[1], HIGH);
-    delay(3);
-    digitalWrite(this->motorPins[1],LOW);
-    digitalWrite(this->motorPins[0], HIGH);
-    delay(3);
-    digitalWrite(this->motorPins[0],LOW);
+    int* delayTime;
+    *delayTime = 3;
+
+
+
+
+
+
+    analogWrite(this->motorPins[3], 255);
+    delay(*delayTime);
+    analogWrite(this->motorPins[3], 0);
+    analogWrite(this->motorPins[2], 255);
+    delay(*delayTime);
+    analogWrite(this->motorPins[2], 0);
+    analogWrite(this->motorPins[1], 255);
+    delay(*delayTime);
+    analogWrite(this->motorPins[1], 0);
+    analogWrite(this->motorPins[0], 255);
+    delay(*delayTime);
+    analogWrite(this->motorPins[0], 0);
+
 }
 
 void M28BYJ48::multiStepForward(int Steps) {
+    /**
+    * The forward step is half-/micro-steped and the backwards step is wave
+    * stepped thus the forward step is 2 times smaller than the back step and is
+    * compensated for by multiplying the amount of steps by 2.
+    */
+    Steps = Steps*2;
     for(int i=0;i<Steps;i++){
         this->stepForward();
     }
