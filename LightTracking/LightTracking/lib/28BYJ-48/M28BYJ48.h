@@ -24,12 +24,12 @@ public:
      * Sets the voltage level to desired Voltage.
      * Sets the pins that the motor will be connected to, pins will be set in the order they will be triggered for
      * counterclockwise rotation ie:
-     * 0: (Pink)
-     * 1: (Yellow)
-     * 2: (Orange)
-     * 3: (Blue)
+     * 0: (Blue)
+     * 1: (Pink)
+     * 2: (Yellow)
+     * 3: (Orange)
      * @param level : The Voltage that the motor will be operating at;
-     * @param pins : [pinkPin,yellowPin,orangePin,bluePin]
+     * @param pins : [bluePin,pinkPin,yellowPin,orangePin]
      */
     M28BYJ48(Voltage level, int* pins);
     ~M28BYJ48() = default;

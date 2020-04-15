@@ -21,13 +21,16 @@ if( (diff > -15) && (diff < 15) ) {
 else {
     if(val[1] > val[0]){
 
-        bottom->multiStepForward(10);
-        Serial.println("Moving Forward");
-        }
-    else {
         bottom->multiStepBackwards(10);
         Serial.println("Moving Backwards");
+
+        }
+    else {
+        bottom->multiStepForward(10);
+        Serial.println("Moving Forward");
+
         }
     }
+    //delay(100);
 
 }
