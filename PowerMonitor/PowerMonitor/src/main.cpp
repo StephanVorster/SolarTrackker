@@ -17,6 +17,6 @@ void loop() {
   value = value/resistor;
   Serial.println(value);
   //Serial.println("W");
-  delay(1000);
+  delay(10000);
 
 }
