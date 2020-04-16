@@ -7,7 +7,7 @@ import time
 def generateJson(val) :
     date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     valStore = {
-        "Power (W)": val,
+        "Voltage (V)": val,
         "Timestamp": date
     }
     return valStore
