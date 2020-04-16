@@ -1,21 +1,15 @@
-#include <Arduino.h>
+#include "PowerMonitor.h"
 
-int pin = A5;
 float value = 0.0;
-float resistor = 1500.0;
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
-
 }
 
+
+PowerMonitor* mon = new PowerMonitor(A5);
+
 void loop() {
-  // put your main code here, to run repeatedly:
-  value = analogRead(pin);
-  value = (5*value)/1024;
-  value = value*value;
-  value = value/resistor;
-  Serial.println(value);
-  delay(((60*5)*1000));
+ mon->displayPower();
+  delay(60000*5);
 
 }

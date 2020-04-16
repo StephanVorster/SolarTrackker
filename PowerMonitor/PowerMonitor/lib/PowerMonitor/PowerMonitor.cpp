@@ -1,5 +1,11 @@
-//
-// Created by user on 2020/04/16.
-//
-
 #include "PowerMonitor.h"
+
+PowerMonitor::PowerMonitor(int pin){
+    this->pin = pin;
+}
+
+PowerMonitor::displayPower(){
+    value = analogRead(this->pin);
+    value = (5*value)/1024;
+    Serial.println(value);
+}
