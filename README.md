@@ -1,6 +1,9 @@
 # SolarTrackker
 During the 2020 lockdowns, I took on a fun project to design and prototype a solar tracker. This project aimed to optimize the efficiency of solar panels by ensuring they are always facing the sun.
 
+https://github.com/StephanVorster/SolarTrackker/assets/48912531/4927339c-f8eb-4e79-99d9-341e807ec8dd
+
+
 ## Overview
 
 The solar tracker utilizes a motor to orient the solar panels in the direction of the brightest light source. The control system relies on a photo transistor-based light sensor system to detect the position of the sun and adjust the orientation of the panels accordingly. An Arduino Uno microcontroller serves as the brain of the system, coordinating the movements of the stepper motor based on the input from the light sensors.
