@@ -24,3 +24,4 @@ The solar tracker utilizes a motor to orient the solar panels in the direction o
 - Supporting hardware (mounting brackets, gears, etc.)
 - Basic electronic components (wires, resistors, etc.)
 
+Discaimer: this project is a for fun project and not meant to be used in a production environment in it's current form.
